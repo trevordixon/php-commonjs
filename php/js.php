@@ -11,7 +11,7 @@
  * Always attempt to exit as JavaScript response
  */
 function js_exit( $code = 0 ){
-    $src = ob_get_contents();
+    $src = ob_get_clean();
     header('Content-Type: application/x-javascript; charset=UTF-8', true );
     header('Content-Length: '.strlen($src), true );
     if( ! $code ){
